@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Competitive Coding - Category - Mrunank&#39;s Blog</title>
+        <link>http://fork52.github.io/categories/competitive-coding/</link>
+        <description>Competitive Coding - Category - Mrunank&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Jul 2021 19:15:09 &#43;0530</lastBuildDate><atom:link href="http://fork52.github.io/categories/competitive-coding/" rel="self" type="application/rss+xml" /><item>
+    <title>Largest Rectangle In Histogram</title>
+    <link>http://fork52.github.io/posts/largest_rectangle_in_histogram/</link>
+    <pubDate>Mon, 05 Jul 2021 19:15:09 &#43;0530</pubDate>
+    <author>Author</author>
+    <guid>http://fork52.github.io/posts/largest_rectangle_in_histogram/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/Largest_Rectangle_In_Histogram/fimage.jpg" referrerpolicy="no-referrer">
+            </div><p>Hey there! This is my first technical post. I&rsquo;ll be discussing the <strong>&ldquo;Largest Rectangle in Histogram&rdquo;</strong> problem. This problem used to trouble me a lot. But it is an interesting one!</p>]]></description>
+</item></channel>
+</rss>

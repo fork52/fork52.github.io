@@ -3,7 +3,7 @@
         <title>Mrunank&#39;s Blog</title>
         <link>http://fork52.github.io/</link>
         <description>I am a budding programmer and chess player</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 21 Apr 2021 18:42:48 &#43;0530</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Jul 2021 19:15:09 &#43;0530</lastBuildDate>
             <atom:link href="http://fork52.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Introducing Myself</title>
@@ -14,5 +14,14 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/first_post/fimage.jpg" referrerpolicy="no-referrer">
             </div><p>Hi there beautiful soul ! This is my first blog post and as per the traditions it is going to be solely about introducing myself.</p>]]></description>
+</item><item>
+    <title>Largest Rectangle In Histogram</title>
+    <link>http://fork52.github.io/posts/largest_rectangle_in_histogram/</link>
+    <pubDate>Mon, 05 Jul 2021 19:15:09 &#43;0530</pubDate>
+    <author>Author</author>
+    <guid>http://fork52.github.io/posts/largest_rectangle_in_histogram/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/Largest_Rectangle_In_Histogram/fimage.jpg" referrerpolicy="no-referrer">
+            </div><p>Hey there! This is my first technical post. I&rsquo;ll be discussing the <strong>&ldquo;Largest Rectangle in Histogram&rdquo;</strong> problem. This problem used to trouble me a lot. But it is an interesting one!</p>]]></description>
 </item></channel>
 </rss>

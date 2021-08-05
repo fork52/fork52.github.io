@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>Largest Rectangle In Histogram | </title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="Largest Rectangle In Histogram"/>
+<meta name="twitter:description" content="My very first post!"/><meta name="twitter:creator" content="@fork521"/><meta name="Description" content="My very first post!"><meta property="og:title" content="Largest Rectangle In Histogram" />
+<meta property="og:description" content="My very first post!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://fork52.github.io/posts/largest_rectangle_in_histogram/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-05T19:15:09&#43;05:30" />
+<meta property="article:modified_time" content="2021-07-05T19:15:09&#43;05:30" />
+
+<meta name="application-name" content="Mrunank&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Mrunank&#39;s Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://fork52.github.io/posts/largest_rectangle_in_histogram/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Largest Rectangle In Histogram",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/fork52.github.io\/posts\/largest_rectangle_in_histogram\/"
+        },"genre": "posts","keywords": "Stack, Problem Solving","wordCount":  1893 ,
+        "url": "http:\/\/fork52.github.io\/posts\/largest_rectangle_in_histogram\/","datePublished": "2021-07-05T19:15:09+05:30","dateModified": "2021-07-05T19:15:09+05:30","description": "My very first post!"
+    }
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "http:\/\/fork52.github.io"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Competitive Coding",
+            "item": "http://fork52.github.io/categories/competitive-coding/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Largest Rectangle In Histogram"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Mrunank&#39;s Blog" class="header-logo logo-svg">Mrunank&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul class="menu-inner"><li>
+                        <a class="menu-item" href="/posts/"> Posts </a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/"> Tags </a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/"> Categories </a>
+                    </li></ul>
+            </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search.." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Mrunank&#39;s Blog" class="header-logo">Mrunank&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search.." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><nav>
+                <ul><li>
+                        <a class="menu-item" href="/posts/" title="">Posts</a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/" title="">Tags</a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/" title="">Categories</a>
+                    </li></ul>
+            </nav>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <span class="svg-icon icon-moon"></span>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+<div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+
+    <div class="header-post">
+
+        
+
+        
+        <div class="post-title">
+
+                <div class="post-all-meta">
+                    <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">Home </a></li><li><a href="/categories/competitive-coding/">Competitive Coding </a></li><li>Largest Rectangle In Histogram</li>
+    </ol>
+</nav>
+                    <h1 class="single-title flipInX">Largest Rectangle In Histogram</h1><div class="post-meta">
+                        <div class="post-meta-line"><span class="post-category">
+                                <a href="/categories/competitive-coding/"><i class="svg-icon icon-folder"></i>Competitive Coding</a>
+                            </span><span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-07-05">2021-07-05</time>
+                            </span><span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>1893 words
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>9 minutes
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+    <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="image-theme-classic">
+                <img src="/Largest_Rectangle_In_Histogram/fimage.jpg" style="width: 100%">
+            </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#naive-solution">Naive Solution</a></li>
+    <li><a href="#a-better-solution">A Better Solution</a></li>
+    <li><a href="#an-elegant-solution">An Elegant Solution!</a></li>
+  </ul>
+</nav></div>
+            </div><p>Hey there! This is my first technical post. I&rsquo;ll be discussing the <strong>&ldquo;Largest Rectangle in Histogram&rdquo;</strong> problem. This problem used to trouble me a lot. But it is an interesting one!</p>
+<h2 id="introduction">Introduction</h2>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title "><i class="icon admonition-icon icon-question"></i>Problem<i class="details-icon  admonition-icon admonition-icon-arrow-right"></i></div>
+        <div class="details-content">
+            <div class="admonition-content">You are given an array representing the heights of the bars in a histogram. You are supposed to find the largest rectangle that can be formed using the bars in the histogram.</div>
+        </div>
+    </div>
+<p>You can try it out on your own on binarysearch.com: <a href="https://binarysearch.com/problems/Area-Under-Histogram" target="_blank" rel="noopener noreffer">Problem Link</a></p>
+<p><strong>Example:</strong></p>
+<p>If you are given the array : <code>arr = [2, 7, 8, 4, 6]</code>, the histogram will look like this.
+<figure><a target="_blank" href="Original_Problem.jpg" title="/posts/largest_rectangle_in_histogram/Original_Problem.jpg" >
+        <img loading="lazy" decoding="async"
+            data-sizes="auto"
+             src="Original_Problem.jpg"
+            alt="/posts/largest_rectangle_in_histogram/Original_Problem.jpg" height="400" width="400"
+        />
+    </a><figcaption class="image-caption">Diagram</figcaption>
+    </figure></p>
+<p>Clearly, the solution to the problem will be the shaded rectangle.
+<figure><a target="_blank" href="Solution.jpg" title="/posts/largest_rectangle_in_histogram/Solution.jpg" >
+        <img loading="lazy" decoding="async"
+            data-sizes="auto"
+             src="Solution.jpg"
+            alt="/posts/largest_rectangle_in_histogram/Solution.jpg" height="400" width="400"
+        />
+    </a><figcaption class="image-caption">Diagram</figcaption>
+    </figure></p>
+<p>We will use this input as an example throughout the post.</p>
+<h2 id="naive-solution">Naive Solution</h2>
+<p>On careful observation, we can notice that the height of the largest rectangle will always be the height of one of the bars present in the input array. This actually helps us to develop a naive solution.</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title "><i class="icon admonition-icon icon-note"></i>Key Idea<i class="details-icon  admonition-icon admonition-icon-arrow-right"></i></div>
+        <div class="details-content">
+            <div class="admonition-content">We can simply go on extending every bar $b_i$ to its left and right until we come across another bar which is shorter than it.</div>
+        </div>
+    </div>
+<p>Here is a C++ implementation for the same:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">max_area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">lo</span> <span class="o">=</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">lo</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">lo</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">height</span><span class="p">)</span> <span class="n">lo</span><span class="o">--</span><span class="p">;</span> <span class="c1">// expand bar to left
+</span><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">hi</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">height</span><span class="p">)</span> <span class="n">hi</span><span class="o">++</span><span class="p">;</span>  <span class="c1">// expand bar to right
+</span><span class="c1"></span>        <span class="n">width</span> <span class="o">=</span> <span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>                       <span class="c1">// calculate width
+</span><span class="c1"></span>        <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max_area</span><span class="p">,</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">);</span>  <span class="c1">// update global ans
+</span><span class="c1"></span>    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">max_area</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The time complexity of this code is $O(n^{2})$ which is too slow.</p>
+<h2 id="a-better-solution">A Better Solution</h2>
+<ul>
+<li>
+<p>In the Naive approach, we essentially try to extend a bar to the left and right directions until we come across a bar which is smaller than it. So in essence, we only care about the location of the first bar which is smaller to the left and the first bar which is smaller to the right. Now, what if we had a way to precompute the locations of the next smaller bar for every bar, for both its left and right side? <strong>This will allow us to get rid of the two inner while loops.</strong></p>
+</li>
+<li>
+<p>It turns out that you can perform this precomputation in $O(n)$ time using stack. This is actually a variant of the classic <a href="https://leetcode.com/problems/next-greater-element-ii/" target="_blank" rel="noopener noreffer">Next Greater to the Right (NGR) problem</a>. In this case, we are concerned with the location of the next smaller elements. The NGR problem can be solved using <a href="https://labuladong.gitbook.io/algo-en/ii.-data-structure/monotonicstack" target="_blank" rel="noopener noreffer">monostack</a>.</p>
+</li>
+<li>
+<p>You are expected to return an vector/array of size $n$ such that : <code>ans[i] = Index of the next smaller element(bar) to the left of arr[i]</code></p>
+</li>
+<li>
+<p>For our convenience, we assume that there is an imaginary zero height bar at index <code>-1</code> as shown in the below figure. Consequently, for a bar $b_{i}$ which has no smaller bar to its left, we set <code>ans[i] = -1</code>, indicating that the imaginary zero height bar is the next smaller to its left. This explains the initialization of the <code>ans</code> vector to <code>-1</code> when its declared. We make a similar assumption for the Nearest Smaller to the Right (NSR) problem. In NSR, the imaginary zero height bar is at index <code>n</code>.</p>
+</li>
+</ul>
+<figure><a target="_blank" href="org_with_indices.png" title="/posts/largest_rectangle_in_histogram/org_with_indices.png" >
+        <img loading="lazy" decoding="async"
+            data-sizes="auto"
+             src="org_with_indices.png"
+            alt="/posts/largest_rectangle_in_histogram/org_with_indices.png" height="400" width="400"
+        />
+    </a><figcaption class="image-caption">Note how we have a zero height bar at indices -1 and 5 respectively.</figcaption>
+    </figure>
+<ul>
+<li>The solution for Next Smaller to the Left ( NSL ) problem for the histogram in our example can be given as: <code>ans[i] = [-1, 0, 1, 0, 3]</code>. The figure below gives more insight on how we obtain the solution. The arrows point to the next smaller bar to the left for every bar.</li>
+</ul>
+<figure><a target="_blank" href="NSL.png" title="/posts/largest_rectangle_in_histogram/NSL.png" >
+        <img loading="lazy" decoding="async"
+            data-sizes="auto"
+             src="NSL.png"
+            alt="/posts/largest_rectangle_in_histogram/NSL.png" height="450" width="500"
+        />
+    </a><figcaption class="image-caption">Figure depicting NSL of every bar height.</figcaption>
+    </figure>
+<ul>
+<li>Similarly we can build an answer for Next Smaller to the Right ( NSR ) problem. <code>ans[i] = [5, 3, 3, 5, 5 ]</code>.</li>
+</ul>
+<figure><a target="_blank" href="NSR.png" title="/posts/largest_rectangle_in_histogram/NSR.png" >
+        <img loading="lazy" decoding="async"
+            data-sizes="auto"
+             src="NSR.png"
+            alt="/posts/largest_rectangle_in_histogram/NSR.png" height="450" width="500"
+        />
+    </a><figcaption class="image-caption">Figure depicting NSR of every bar height.</figcaption>
+    </figure>
+<p>Here&rsquo;s an implementation for Nearest Smaller to the left ( NSL ) problem.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">NSL</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/*
+</span><span class="cm">    Returns a vector as a solution for Nearest Smaller to the Left Problem
+</span><span class="cm">    */</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stk</span><span class="p">;</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+            <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+        <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Implementation for NSR:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">NSR</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">){</span>
+    <span class="cm">/*
+</span><span class="cm">    Returns a vector as a solution for Nearest Smaller to the Right Problem
+</span><span class="cm">    */</span>
+   <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stk</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">){</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+        <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Putting it all together:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">max_area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">left</span> <span class="o">=</span> <span class="n">NSL</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">right</span> <span class="o">=</span> <span class="n">NSR</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">lo</span> <span class="o">=</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max_area</span><span class="p">,</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">max_area</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Notice how we got rid of the two inner while loops in the naive approach!</p>
+<p>Time Complexity of this approach is $O(n)$.</p>
+<p>Space Complexity is $O(2n)$ as we are using two arrays, <code>left</code> and <code>right</code> for storing NSL and NSR.</p>
+<p>Can we do better ???</p>
+<h2 id="an-elegant-solution">An Elegant Solution!</h2>
+<ul>
+<li>
+<p>It is possible to solve this problem in a <strong>single pass using monostack</strong>, very similar to the way we solve the Next Greater to the Right (NGR) problem.</p>
+</li>
+<li>
+<p>We push elements (bar heights) into the monostack in a <strong>strictly increasing order</strong> as we move form left to right. This is an <strong>invariant</strong> that we always maintain. Since, we care about the location of the elements, we push their indices instead of the values. We can always access the values as per our needs when we have the indices.</p>
+</li>
+<li>
+<p>In the following section, I&rsquo;ll be referring to the indices of bar heights as bar heights themselves.</p>
+</li>
+</ul>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title "><i class="icon admonition-icon icon-note"></i>Key Idea<i class="details-icon  admonition-icon admonition-icon-arrow-right"></i></div>
+        <div class="details-content">
+            <div class="admonition-content">While moving from left to right, we only keep the indices of the bar heights in the stack which have a potential to be further expanded <strong>towards the right</strong>.</div>
+        </div>
+    </div>
+<ul>
+<li>
+<p>If the current bar height $b_i$ is greater than the bar height on the top of the stack (or if the stack is empty ), then we simply push the index $i$ on the top of the stack and move on.</p>
+</li>
+<li>
+<p>In our example, <code>arr = [2, 7, 8, 4, 6]</code> the array is strictly increasing till index 2. So, we simply add the indices into the stack sequentially.</p>
+</li>
+</ul>
+<figure><a target="_blank" href="stack_init.jpg" title="/posts/largest_rectangle_in_histogram/stack_init.jpg" >
+        <img loading="lazy" decoding="async"
+            data-sizes="auto"
+             src="stack_init.jpg"
+            alt="/posts/largest_rectangle_in_histogram/stack_init.jpg" height="300" width="250"
+        />
+    </a><figcaption class="image-caption">Figure showing stack after processing indices 0,1,2.</figcaption>
+    </figure>
+<ul>
+<li>
+<p>But when we encounter a bar height $b_i$ which is shorter than the bar height on the top of the stack, say $b_j$ ( $b_j &lt; b_i$ and $j &lt; i$  ), we can conclude that $b_j$ cannot be expanded beyond index $i$ towards the right.</p>
+</li>
+<li>
+<p>In our example, when $i = 3$, $b_i = 4$. The bar height of the index on top of the stack $j = 2$ is $b_j = 8$. So here, $b_j &gt; b_i$ as $8 &gt; 4$. We now come to know that the bar height $b_j$ = 8 cannot be expanded further as $b_i = 4$ is not big enough to expand $b_j$&rsquo;s rectangle.</p>
+</li>
+</ul>
+<figure><a target="_blank" href="at_index_4.jpg" title="/posts/largest_rectangle_in_histogram/at_index_4.jpg" >
+        <img loading="lazy" decoding="async"
+            data-sizes="auto"
+             src="at_index_4.jpg"
+            alt="/posts/largest_rectangle_in_histogram/at_index_4.jpg" height="500" width="800"
+        />
+    </a><figcaption class="image-caption">Figure showing state at index 3. Note $k &lt; j &lt; i$.</figcaption>
+    </figure>
+<ul>
+<li>
+<p>Since $b_j$ was present in the stack so far, we know for sure that $b_j$ can be expanded uptil index $i-1$. It remains to find out how much it it can be expanded to the left.</p>
+</li>
+<li>
+<p>In our example, for $b_j = 8$, we know that $b_j$ can be expanded only uptil index $i - 1$ i.e $3-1 = 2$. This is our rightmost expansion point for $b_j = 8$.</p>
+</li>
+<li>
+<p>To find the left expansion point, we can make use of of the fact that the stack is strictly increasing! Our left expansion point is simply the index of the bar $b_k$ in the stack, below the top element $b_j$. This is because it is guaranteed that $b_k$ &lt; $b_j$ (also $k &lt; j$) and hence, $b_j$ can only be expanded uptil index $k+1$ to the left. If $b_k$ does not exist, then the stack will be empty. However, we can assume $k$ as $-1$ in this case for mathematical convenience.</p>
+</li>
+<li>
+<p>In our example, for $b_j = 8$ the index $k$ is $k = 1$ as $b_k = 7$ and $b_k &lt; b_j$.
+So the left expansion point for the bar height $8$ is $k + 1 = 2$.</p>
+</li>
+</ul>
+<figure><a target="_blank" href="left_and_right.png" title="/posts/largest_rectangle_in_histogram/left_and_right.png" >
+        <img loading="lazy" decoding="async"
+            data-sizes="auto"
+             src="left_and_right.png"
+            alt="/posts/largest_rectangle_in_histogram/left_and_right.png" height="450" width="500"
+        />
+    </a><figcaption class="image-caption">Figure depicting left and right expansion points for $b_j = 8$.</figcaption>
+    </figure>
+<ul>
+<li>
+<p>At its core, the solution is simply a more elegant version of the second approach we saw earlier. $b_k$ is the next smaller element to the left of $b_j$ and $b_i$ is the next smaller element to the right of $b_j$.</p>
+</li>
+<li>
+<p>So bar height $b_j$ spans from $k+1,k+2,&hellip;j,&hellip;,i-1$. The width of the rectangle it forms is $i - k - 1$. ( Note that $k &lt; j &lt; i$ ). So the height of the rectangle is $b_j$ and its width is $i - k - 1$. Using them, we update our global maximum answer. After all this, we can say that we have completely processed element $b_j$. We pop index $j$ out of the stack.</p>
+</li>
+<li>
+<p>We keep on popping out bar heights from the top of the stack until $b_i$ is smaller or equal to the bar height on the top of the stack. Once, we have processed all the bar heights from the stack we push index $i$ onto the stack with the hope of $b_i$ getting expanded further to the right.</p>
+</li>
+<li>
+<p>If the stack is non-empty at the end, we process the remaining elements in the stack with the same algorithm, assuming we have a zero height bar at index $n$ as mentioned earlier ( We assume $i = n$).</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stk</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">max_area</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">,</span> <span class="n">cur_area</span> <span class="p">,</span> <span class="n">height</span> <span class="p">,</span> <span class="n">k</span> <span class="p">,</span> <span class="n">width</span><span class="p">;</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()];</span>  <span class="c1">// This height is bj
+</span><span class="c1"></span>            <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">cur_area</span> <span class="o">=</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span><span class="p">;</span>
+            <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">cur_area</span> <span class="p">,</span> <span class="n">max_area</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">// Pushing index i onto the stack after processing elements from stack.
+</span><span class="c1"></span>    <span class="p">}</span>
+
+    <span class="c1">// We process the remaining elements in the stack.
+</span><span class="c1"></span>    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()];</span>   <span class="c1">// This height is bj
+</span><span class="c1"></span>        <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// In this case, i = n
+</span><span class="c1"></span>        <span class="n">cur_area</span> <span class="o">=</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span><span class="p">;</span>
+        <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">cur_area</span> <span class="p">,</span> <span class="n">max_area</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">max_area</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div>
+
+            <div class="post" style="padding-top: 0">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://fork52.github.io/posts/largest_rectangle_in_histogram/" data-title="Largest Rectangle In Histogram" data-via="fork521" data-hashtags="Stack,Problem Solving"><span class="svg-social-icon icon-twitter"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://fork52.github.io/posts/largest_rectangle_in_histogram/" data-hashtag="Stack"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-linkedin" href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://fork52.github.io/posts/largest_rectangle_in_histogram/"><span class="svg-social-icon icon-linkedin"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-reddit" href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://fork52.github.io/posts/largest_rectangle_in_histogram/"><span class="svg-social-icon icon-reddit"></span></a>
+    </div><div class="share-link">
+    <a class="share-icon share-hackernews" href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://fork52.github.io/posts/largest_rectangle_in_histogram/" data-title="Largest Rectangle In Histogram"><span class="svg-social-icon icon-hacker-news"></span></a>
+    </div></div>
+<div class="post-tags"><a href="/tags/stack/" class="tag">Stack</a><a href="/tags/problem-solving/" class="tag">Problem Solving</a></div></div>
+        </div>
+    <div id="toc-final"></div>
+    </article></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Mrunank Mistry</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":80},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body>
+</html>
