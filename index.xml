@@ -3,7 +3,7 @@
         <title>Mrunank&#39;s Blog</title>
         <link>http://fork52.github.io/</link>
         <description>I am a budding programmer and chess player</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Jul 2021 19:15:09 &#43;0530</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 22 May 2023 21:09:30 &#43;0530</lastBuildDate>
             <atom:link href="http://fork52.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Introducing Myself</title>
@@ -19,5 +19,13 @@
     <author>Author</author>
     <guid>http://fork52.github.io/posts/largest_rectangle_in_histogram/</guid>
     <description><![CDATA[<p>Hey there! This is my first technical post. I&rsquo;ll be discussing the <strong>&ldquo;Largest Rectangle in Histogram&rdquo;</strong> problem. This problem used to trouble me a lot. But it is an interesting one!</p>]]></description>
+</item><item>
+    <title>Exploring Threads</title>
+    <link>http://fork52.github.io/posts/multithreading/</link>
+    <pubDate>Mon, 22 May 2023 21:09:30 &#43;0530</pubDate>
+    <author>Author</author>
+    <guid>http://fork52.github.io/posts/multithreading/</guid>
+    <description><![CDATA[<h3 id="exploring-multi-threading">Exploring multi-threading</h3>
+<p>Hi there! Hope you are doing good. I always had this <strong>fear</strong> of certain niche topics in software engineering which keep on bothering me every now and then (M kinda noob 🐼). Multi-threading is one such topic.</p>]]></description>
 </item></channel>
 </rss>

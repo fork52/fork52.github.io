@@ -3,7 +3,14 @@
         <title>Categories - Category - Mrunank&#39;s Blog</title>
         <link>http://fork52.github.io/categories/</link>
         <description>Categories - Category - Mrunank&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Jul 2021 19:15:09 &#43;0530</lastBuildDate><atom:link href="http://fork52.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 22 May 2023 21:09:30 &#43;0530</lastBuildDate><atom:link href="http://fork52.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Software Engineering</title>
+    <link>http://fork52.github.io/categories/software-engineering/</link>
+    <pubDate>Mon, 22 May 2023 21:09:30 &#43;0530</pubDate>
+    <author>Author</author>
+    <guid>http://fork52.github.io/categories/software-engineering/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Competitive Coding</title>
     <link>http://fork52.github.io/categories/competitive-coding/</link>
     <pubDate>Mon, 05 Jul 2021 19:15:09 &#43;0530</pubDate>

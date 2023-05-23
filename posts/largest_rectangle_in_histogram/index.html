@@ -9,9 +9,8 @@
 <meta property="og:description" content="Post on Largest Rectangle in Histogram!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://fork52.github.io/posts/largest_rectangle_in_histogram/" /><meta property="og:image" content="http://fork52.github.io/posts/largest_rectangle_in_histogram/fimage.jpg"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-07-05T19:15:09&#43;05:30" />
-<meta property="article:modified_time" content="2021-07-05T19:15:09&#43;05:30" />
-
+<meta property="article:published_time" content="2021-07-05T19:15:09+05:30" />
+<meta property="article:modified_time" content="2021-07-05T19:15:09+05:30" />
 <meta name="application-name" content="Mrunank&#39;s Blog">
 <meta name="apple-mobile-web-app-title" content="Mrunank&#39;s Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -227,7 +226,7 @@
 <p>Here is a C++ implementation for the same:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -242,20 +241,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">max_area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">height</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-        <span class="n">lo</span> <span class="o">=</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">lo</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">lo</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">height</span><span class="p">)</span> <span class="n">lo</span><span class="o">--</span><span class="p">;</span> <span class="c1">// expand bar to left
-</span><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">hi</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">height</span><span class="p">)</span> <span class="n">hi</span><span class="o">++</span><span class="p">;</span>  <span class="c1">// expand bar to right
-</span><span class="c1"></span>        <span class="n">width</span> <span class="o">=</span> <span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>                       <span class="c1">// calculate width
-</span><span class="c1"></span>        <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max_area</span><span class="p">,</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">);</span>  <span class="c1">// update global ans
-</span><span class="c1"></span>    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">max_area</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">max_area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">height</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lo</span> <span class="o">=</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">lo</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">lo</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">height</span><span class="p">)</span> <span class="n">lo</span><span class="o">--</span><span class="p">;</span> <span class="c1">// expand bar to left
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">hi</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">height</span><span class="p">)</span> <span class="n">hi</span><span class="o">++</span><span class="p">;</span>  <span class="c1">// expand bar to right
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">width</span> <span class="o">=</span> <span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>                       <span class="c1">// calculate width
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max_area</span><span class="p">,</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">);</span>  <span class="c1">// update global ans
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">max_area</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The time complexity of this code is $O(n^{2})$ which is too slow.</p>
 <h2 id="a-better-solution">A Better Solution</h2>
@@ -306,7 +305,7 @@
 <p>Here&rsquo;s an implementation for Nearest Smaller to the left ( NSL ) problem.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -325,29 +324,29 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">NSL</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
-    <span class="cm">/*
-</span><span class="cm">    Returns a vector as a solution for Nearest Smaller to the Left Problem
-</span><span class="cm">    */</span>
-    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stk</span><span class="p">;</span>
-
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
-            <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-        <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">NSL</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Returns a vector as a solution for Nearest Smaller to the Left Problem
+</span></span></span><span class="line"><span class="cl"><span class="cm">    */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Implementation for NSR:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -366,29 +365,29 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">NSR</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">){</span>
-    <span class="cm">/*
-</span><span class="cm">    Returns a vector as a solution for Nearest Smaller to the Right Problem
-</span><span class="cm">    */</span>
-   <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stk</span><span class="p">;</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">){</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
-            <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-        <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">NSR</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Returns a vector as a solution for Nearest Smaller to the Right Problem
+</span></span></span><span class="line"><span class="cl"><span class="cm">    */</span>
+</span></span><span class="line"><span class="cl">   <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Putting it all together:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -403,20 +402,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">max_area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">left</span> <span class="o">=</span> <span class="n">NSL</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">right</span> <span class="o">=</span> <span class="n">NSR</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">height</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-        <span class="n">lo</span> <span class="o">=</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-        <span class="n">width</span> <span class="o">=</span> <span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max_area</span><span class="p">,</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">max_area</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">max_area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">left</span> <span class="o">=</span> <span class="n">NSL</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">right</span> <span class="o">=</span> <span class="n">NSR</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">height</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lo</span> <span class="o">=</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">width</span> <span class="o">=</span> <span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max_area</span><span class="p">,</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">max_area</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Notice how we got rid of the two inner while loops in the naive approach!</p>
 <p>Time Complexity of this approach is $O(n)$.</p>
@@ -511,7 +510,7 @@ So the left expansion point for the bar height $8$ is $k + 1 = 2$.</p>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -543,37 +542,37 @@ So the left expansion point for the bar height $8$ is $k + 1 = 2$.</p>
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stk</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">max_area</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">,</span> <span class="n">cur_area</span> <span class="p">,</span> <span class="n">height</span> <span class="p">,</span> <span class="n">k</span> <span class="p">,</span> <span class="n">width</span><span class="p">;</span>
-
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
-            <span class="n">height</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()];</span>  <span class="c1">// This height is bj
-</span><span class="c1"></span>            <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-            <span class="n">k</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-            <span class="n">width</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="n">cur_area</span> <span class="o">=</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span><span class="p">;</span>
-            <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">cur_area</span> <span class="p">,</span> <span class="n">max_area</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">// Pushing index i onto the stack after processing elements from stack.
-</span><span class="c1"></span>    <span class="p">}</span>
-
-    <span class="c1">// We process the remaining elements in the stack.
-</span><span class="c1"></span>    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
-        <span class="n">height</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()];</span>   <span class="c1">// This height is bj
-</span><span class="c1"></span>        <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-        <span class="n">k</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-        <span class="n">width</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// In this case, i = n
-</span><span class="c1"></span>        <span class="n">cur_area</span> <span class="o">=</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span><span class="p">;</span>
-        <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">cur_area</span> <span class="p">,</span> <span class="n">max_area</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">max_area</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">max_area</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">,</span> <span class="n">cur_area</span> <span class="p">,</span> <span class="n">height</span> <span class="p">,</span> <span class="n">k</span> <span class="p">,</span> <span class="n">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">height</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()];</span>  <span class="c1">// This height is bj
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">k</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">width</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cur_area</span> <span class="o">=</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">cur_area</span> <span class="p">,</span> <span class="n">max_area</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">// Pushing index i onto the stack after processing elements from stack.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// We process the remaining elements in the stack.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">height</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()];</span>   <span class="c1">// This height is bj
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">k</span> <span class="o">=</span> <span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">width</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// In this case, i = n
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">cur_area</span> <span class="o">=</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">max_area</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">cur_area</span> <span class="p">,</span> <span class="n">max_area</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">max_area</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div>
 
@@ -597,7 +596,7 @@ So the left expansion point for the bar height $8$ is $k + 1 = 2$.</p>
     </article></div>
 
 </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Mrunank Mistry</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2021 - 2023</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Mrunank Mistry</a></span></div>
         </div>
     </footer></div>
 

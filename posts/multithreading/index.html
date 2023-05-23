@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>Exploring Threads | </title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://fork52.github.io/posts/multithreading/fimage.png"/>
+<meta name="twitter:title" content="Exploring Threads"/>
+<meta name="twitter:description" content="Post on multi threading"/><meta name="twitter:creator" content="@fork521"/><meta name="Description" content="Post on multi threading"><meta property="og:title" content="Exploring Threads" />
+<meta property="og:description" content="Post on multi threading" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://fork52.github.io/posts/multithreading/" /><meta property="og:image" content="http://fork52.github.io/posts/multithreading/fimage.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-22T21:09:30+05:30" />
+<meta property="article:modified_time" content="2023-05-22T21:09:30+05:30" />
+<meta name="application-name" content="Mrunank&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Mrunank&#39;s Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://fork52.github.io/posts/multithreading/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Exploring Threads",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/fork52.github.io\/posts\/multithreading\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "http:\/\/fork52.github.io\/posts\/multithreading\/fimage.png",
+                            "width":  800 ,
+                            "height":  250 
+                        }],"genre": "posts","keywords": "Java, Threading","wordCount":  634 ,
+        "url": "http:\/\/fork52.github.io\/posts\/multithreading\/","datePublished": "2023-05-22T21:09:30+05:30","dateModified": "2023-05-22T21:09:30+05:30","description": "Post on multi threading"
+    }
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "http:\/\/fork52.github.io"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Software Engineering",
+            "item": "http://fork52.github.io/categories/software-engineering/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Exploring Threads"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Mrunank&#39;s Blog" class="header-logo logo-svg">Mrunank&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul class="menu-inner"><li>
+                        <a class="menu-item" href="/posts/"> Posts </a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/"> Tags </a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/"> Categories </a>
+                    </li></ul>
+            </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search.." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Mrunank&#39;s Blog" class="header-logo">Mrunank&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search.." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><nav>
+                <ul><li>
+                        <a class="menu-item" href="/posts/" title="">Posts</a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/" title="">Tags</a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/" title="">Categories</a>
+                    </li></ul>
+            </nav>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <span class="svg-icon icon-moon"></span>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+<div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+
+    <div class="header-post">
+
+        
+
+        
+        <div class="post-title">
+
+                <div class="post-all-meta">
+                    <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">Home </a></li><li><a href="/categories/software-engineering/">Software Engineering </a></li><li>Exploring Threads</li>
+    </ol>
+</nav>
+                    <h1 class="single-title flipInX">Exploring Threads</h1><div class="post-meta">
+                        <div class="post-meta-line"><span class="post-category">
+                                <a href="/categories/software-engineering/"><i class="svg-icon icon-folder"></i>Software Engineering</a>
+                            </span><span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2023-05-22">2023-05-22</time>
+                            </span><span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>634 words
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>3 minutes
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+    <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="image-theme-classic">
+                <img src="http://fork52.github.io/posts/multithreading/fimage.png" style="width: 100%">
+            </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#exploring-multi-threading">Exploring multi-threading</a></li>
+        <li><a href="#basic-understanding-on-threads">Basic Understanding on Threads</a></li>
+        <li><a href="#creating-a-thread-in-java">Creating a thread in java</a>
+          <ul>
+            <li><a href="#1-extending-thread-class">1. <strong>Extending Thread class</strong>:</a></li>
+            <li><a href="#2-implementing-the-runnable-interface-recommended-way">2. <strong>Implementing the Runnable interface (Recommended way)</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#join-method">join() method</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><h3 id="exploring-multi-threading">Exploring multi-threading</h3>
+<p>Hi there! Hope you are doing good. I always had this <strong>fear</strong> of certain niche topics in software engineering which keep on bothering me every now and then (M kinda noob 🐼). Multi-threading is one such topic.</p>
+<p>So hence I have decided to face my inner-fears 💪 and create a series of posts which will help me and others with similar fears to understand these topics in an easier way. This will also serve as reference notes.</p>
+<h3 id="basic-understanding-on-threads">Basic Understanding on Threads</h3>
+<ul>
+<li>Threads essentially allow us to solve computational problems by dividing the larger problem into <strong>smaller parallelized</strong> tasks. These tasks can run asynchronously and in a non-blocking fashion. Threads are especially useful in boosting performance ⚡ in <strong>multi-core systems</strong>.</li>
+<li>Threads are often called as <strong>light-weight processes</strong>. Creating a new thread has a lesser memory foot-print as compared to creating a new process.</li>
+<li>Every process has atleast has one thread(main thread). Using the main thread we can create child threads as per our needs.</li>
+<li>Threads share resources of the parent process like memory space. Hence, data consistency can be an issue.</li>
+</ul>
+<h3 id="creating-a-thread-in-java">Creating a thread in java</h3>
+<ul>
+<li>There are mainly two ways in which you can create threads in java:</li>
+</ul>
+<h4 id="1-extending-thread-class">1. <strong>Extending Thread class</strong>:</h4>
+<ul>
+<li>One way to create a thread is to extend the <code>java.lang.Thread</code> class and provide an implementation for the <code>run()</code> method by overriding it.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.fork52.threading</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleThread</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Performing operation...&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.fork52.threading</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Usage
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThreadingMain</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">SampleThread</span> <span class="n">sampleThread</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SampleThread</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">		<span class="n">sampleThread</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>By default, the <code>Thread</code> class provides an empty run method implementation as default implementation. The <code>run()</code> method is where you need to provide your code which needs to be run as a thread.</p>
+</li>
+<li>
+<p>However, this is not a recommended approach to create Threads as the SampleThread class now cannot extend any other class if we wanted it to.</p>
+</li>
+</ul>
+<h4 id="2-implementing-the-runnable-interface-recommended-way">2. <strong>Implementing the Runnable interface (Recommended way)</strong></h4>
+<ul>
+<li>This is the recommended approach as its more flexible. We are not subclassing a concrete class to add threading functionality. We are implementing the <code>run()</code> method of <code>java.lang.Runnable</code> interface.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.fork52.threading</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleThreadRunnable</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Performing operation...&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.fork52.threading</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Usage
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThreadingMain</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">SampleThreadRunnable</span> <span class="n">sampleThreadRunnable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SampleThreadRunnable</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Thread</span> <span class="n">thread</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="n">sampleThreadRunnable</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">thread</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>Notice how we are passing the <code>Runnable</code> object into the Thread class object.</p>
+</li>
+<li>
+<p>Also, we are now invoking <code>start()</code> method instead of <code>run()</code>.</p>
+</li>
+<li>
+<p>Since <code>Runnable</code> interface is a <strong>Functional interface</strong>, we can use lambdas to pass our thread code which makes our code concise and makes you look cool 😎.</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.fork52.threading</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThreadingMain</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Thread</span> <span class="n">thread</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Performing some operation..&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">		<span class="n">thread</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition note open">
+        <div class="details-summary admonition-title "><i class="icon admonition-icon icon-note"></i>Note<i class="details-icon  admonition-icon admonition-icon-arrow-right"></i></div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><code>Thread.sleep(long millis)</code> can be used to pause a thread. It throws <code>InterruptedException</code>, hence the exception needs to be handled using a try-catch block.</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h3 id="join-method">join() method</h3>
+<ul>
+<li>The join method allows one thread to wait for the completion of another.</li>
+<li>If <code>t</code> is a <code>Thread</code> object whose thread is currently executing, <code>t.join();</code> causes the current(parent) thread to pause execution until <code>t's</code> thread terminates.</li>
+<li>This is helpful when one thread is dependent on another thread&rsquo;s completion. We can make the dependent thread wait for its dependencies to execute first.</li>
+</ul>
+<br>
+In the upcoming posts, I will try to cover concurency and synchronization. Have a nice day! 😇
+<h3 id="references">References</h3>
+<ol>
+<li><a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html" target="_blank" rel="noopener noreffer">Oracle Java 8 docs</a></li>
+</ol></div>
+
+            <div class="post" style="padding-top: 0">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://fork52.github.io/posts/multithreading/" data-title="Exploring Threads" data-via="fork521" data-hashtags="Java,Threading"><span class="svg-social-icon icon-twitter"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://fork52.github.io/posts/multithreading/" data-hashtag="Java"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-linkedin" href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://fork52.github.io/posts/multithreading/"><span class="svg-social-icon icon-linkedin"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-reddit" href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://fork52.github.io/posts/multithreading/"><span class="svg-social-icon icon-reddit"></span></a>
+    </div><div class="share-link">
+    <a class="share-icon share-hackernews" href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://fork52.github.io/posts/multithreading/" data-title="Exploring Threads"><span class="svg-social-icon icon-hacker-news"></span></a>
+    </div></div>
+<div class="post-tags"><a href="/tags/java/" class="tag">Java</a><a href="/tags/threading/" class="tag">Threading</a></div></div>
+        </div>
+    <div id="toc-final"></div>
+    </article></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2021 - 2023</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Mrunank Mistry</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":80},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body>
+</html>

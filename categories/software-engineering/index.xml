@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Software Engineering - Category - Mrunank&#39;s Blog</title>
+        <link>http://fork52.github.io/categories/software-engineering/</link>
+        <description>Software Engineering - Category - Mrunank&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 22 May 2023 21:09:30 &#43;0530</lastBuildDate><atom:link href="http://fork52.github.io/categories/software-engineering/" rel="self" type="application/rss+xml" /><item>
+    <title>Exploring Threads</title>
+    <link>http://fork52.github.io/posts/multithreading/</link>
+    <pubDate>Mon, 22 May 2023 21:09:30 &#43;0530</pubDate>
+    <author>Author</author>
+    <guid>http://fork52.github.io/posts/multithreading/</guid>
+    <description><![CDATA[<h3 id="exploring-multi-threading">Exploring multi-threading</h3>
+<p>Hi there! Hope you are doing good. I always had this <strong>fear</strong> of certain niche topics in software engineering which keep on bothering me every now and then (M kinda noob 🐼). Multi-threading is one such topic.</p>]]></description>
+</item></channel>
+</rss>
